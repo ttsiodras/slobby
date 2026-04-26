@@ -7,11 +7,11 @@
 
 Before, with just slobby:
 
-![Before, with just slobby](mathjax_proxy/images/before.png "Before, with just slobby")
+[Before, with just slobby](mathjax_proxy/images/before.png "Before, with just slobby")
 
 After, over this mathjax_proxy.py:
 
-![After, over this mathjax_proxy.py](mathjax_proxy/images/after.png "After, over this mathjax_proxy.py")
+[After, over this mathjax_proxy.py](mathjax_proxy/images/after.png "After, over this mathjax_proxy.py")
 
 ** Installation
 
