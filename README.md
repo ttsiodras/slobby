@@ -59,3 +59,16 @@ For example, to serve all slob files in /~/Downloads// directory:
 ```
 slobby ~/Downloads/*.slob
 ```
+
+Once slobby is up, it listens on port 8013. To fix the math issues, launch
+the proxy next:
+
+```
+cd mathjax_proxy/
+python3 -m venv .venv
+. .venv/bin/activate
+python3 mathjax_proxy.py
+```
+
+Then hit http://localhost:8014. The proxy will speak to slobby on port 8013
+and fix the non-inline math, rendering them fully offline via MathJax in the browser.
