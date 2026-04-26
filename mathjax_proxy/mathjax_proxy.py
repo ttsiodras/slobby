@@ -7,14 +7,15 @@ Uses BeautifulSoup-based filter_logic for reliable HTML parsing.
 
 import asyncio
 import httpx
+import os
 from aiohttp import web
 
 # Import common filter logic using BeautifulSoup
 from filter_logic import process_math_elements, add_mathjax_script
 
-# Target Slobby server
-TARGET_HOST = "127.0.0.1"
-TARGET_PORT = 8013
+# Target Slobby server - use environment variables with defaults
+TARGET_HOST = os.environ.get('TARGET_HOST', '127.0.0.1')
+TARGET_PORT = int(os.environ.get('TARGET_PORT', '8013'))
 
 
 def process_html_response(html_content: str) -> str:
@@ -121,13 +122,13 @@ def create_app() -> web.Application:
 def main():
     """Main entry point."""
     app = create_app()
-    print(f"Starting MathJax proxy server...")
-    print(f"Target: http://{TARGET_HOST}:{TARGET_PORT}")
-    print(f"Listening on: http://127.0.0.1:8014")
-    print(f"\nMath formulas will be rendered using MathJax instead of broken images.")
-    print("Press Ctrl+C to stop.\n")
+    print(f"Starting MathJax proxy server...", flush=True)
+    print(f"Target: http://{TARGET_HOST}:{TARGET_PORT}", flush=True)
+    print(f"Listening on: http://0.0.0.0:8014", flush=True)
+    print(f"\nMath formulas will be rendered using MathJax instead of broken images.", flush=True)
+    print("Press Ctrl+C to stop.\n", flush=True)
     
-    web.run_app(app, host='127.0.0.1', port=8014, print=None)
+    web.run_app(app, host='0.0.0.0', port=8014, print=None)
 
 
 if __name__ == '__main__':
