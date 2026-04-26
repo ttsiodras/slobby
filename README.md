@@ -17,10 +17,10 @@ After, over this mathjax_proxy.py:
 
 Create Python 3 virtual environment and install slob.py as
 described at http://github.org/itkach/slob/. In this virtual
-environment run
+environment, then run:
 
 ```
-pip install git+https://github.com/itkach/slobby.git
+pip install git+https://github.com/ttsiodras/slobby.git
 ```
 
 ## Usage
@@ -67,6 +67,7 @@ the proxy next:
 cd mathjax_proxy/
 python3 -m venv .venv
 . .venv/bin/activate
+python3 -m pip install -r requirements.txt
 python3 mathjax_proxy.py
 ```
 
