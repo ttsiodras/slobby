@@ -2,6 +2,17 @@
 
   Slobby is a minimalistic web-based viewer for slob file content.
 
+  My change: added a proxy in front that fixes rendering of non-inline math
+  via MathJax. See difference:
+
+Before, with just slobby:
+
+![Before, with just slobby](mathjax_proxy/images/before.png "Before, with just slobby")
+
+After, over this mathjax_proxy.py:
+
+![After, over this mathjax_proxy.py](mathjax_proxy/images/after.png "After, over this mathjax_proxy.py")
+
 ** Installation
 
    Create Python 3 virtual environment and install slob.py as
