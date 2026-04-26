@@ -75,7 +75,8 @@ async def handle_request(request: web.Request) -> web.Response:
             response_obj = web.Response(
                 body=content,
                 status=response.status_code,
-                content_type=content_type
+                content_type=content_type,
+                charset='utf-8'
             )
             
             # Copy relevant headers
@@ -122,7 +123,7 @@ def main():
     app = create_app()
     print(f"Starting MathJax proxy server...")
     print(f"Target: http://{TARGET_HOST}:{TARGET_PORT}")
-    print(f"Listening on: http://127.0.1.0:8014")
+    print(f"Listening on: http://127.0.0.1:8014")
     print(f"\nMath formulas will be rendered using MathJax instead of broken images.")
     print("Press Ctrl+C to stop.\n")
     
