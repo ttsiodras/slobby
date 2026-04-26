@@ -1,9 +1,9 @@
-* Slobby
+# Slobby
 
-  Slobby is a minimalistic web-based viewer for slob file content.
+Slobby is a minimalistic web-based viewer for slob file content.
 
-  My change: added a proxy in front that fixes rendering of non-inline math
-  via MathJax. See difference:
+My change: added a proxy in front that fixes rendering of non-inline math
+via MathJax. See difference:
 
 Before, with just slobby:
 
@@ -13,23 +13,22 @@ After, over this mathjax_proxy.py:
 
 ![After, over this mathjax_proxy.py](mathjax_proxy/images/after.png "After, over this mathjax_proxy.py")
 
-** Installation
+## Installation
 
-   Create Python 3 virtual environment and install slob.py as
-   described at http://github.org/itkach/slob/. In this virtual
-   environment run
+Create Python 3 virtual environment and install slob.py as
+described at http://github.org/itkach/slob/. In this virtual
+environment run
 
-   #+BEGIN_SRC sh
-   pip install git+https://github.com/itkach/slobby.git
-   #+END_SRC
+```
+pip install git+https://github.com/itkach/slobby.git
+```
 
+## Usage
 
-** Usage
+When Slobby starts, it opens specified slob files and starts a web
+server, by default on port 8013, to allow browsing their content.
 
-   When Slobby starts, it opens specified slob files and starts a web
-   server, by default on port 8013, to allow browsing their content.
-
-   #+BEGIN_SRC
+```
 slobby [-h] [-p PORT] [-i INTERFACE] [-t THREADS] [-l LIMIT] [-b]
                  [-m MOUNT_PATH]
                  slob [slob ...]
@@ -53,9 +52,10 @@ optional arguments:
   -m MOUNT_PATH, --mount-path MOUNT_PATH
                         Website root. This facilitates setting up access
                         through a reverse proxy like nginx Default: /
-   #+END_SRC
+```
 
-   For example, to serve all slob files in /~/Downloads// directory:
-   #+BEGIN_SRC
-   slobby ~/Downloads/*.slob
-   #+END_SRC
+For example, to serve all slob files in /~/Downloads// directory:
+
+```
+slobby ~/Downloads/*.slob
+```
